@@ -23,9 +23,12 @@ import fs from "fs";
         } catch (error) {
             fs.unlinkSync(localFilePath) //remove the locally saved temp file on the server as the upload operation got failed...
             console.log("UPLOAD OPERATION FAILED !!");
+            return null;
         }
 
     }
+
+    export { uploadOnCloudinary };
 
 
     
