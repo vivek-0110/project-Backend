@@ -18,7 +18,8 @@ import fs from "fs";
                 resource_type: "auto"
             })
             //file uploaded successfully
-            console.log("FILE UPLOADED ON CLOUDINARY SUCCESSFULLY!!", response.url );
+            //console.log("FILE UPLOADED ON CLOUDINARY SUCCESSFULLY!!", response.url );
+            fs.unlinkSync(localFilePath);
             return response;
         } catch (error) {
             fs.unlinkSync(localFilePath) //remove the locally saved temp file on the server as the upload operation got failed...
